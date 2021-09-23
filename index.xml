@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Hugo Sousa</title>
+    <link>https://sousahugo.com/</link>
+    <description>Recent content on Hugo Sousa</description>
+    <image>
+      <url>https://sousahugo.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://sousahugo.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator><atom:link href="https://sousahugo.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Education</title>
+      <link>https://sousahugo.com/education/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://sousahugo.com/education/</guid>
+      <description>2020-2024 (expected) PhD, Computer Science; University of Porto As a Grant Holder from the text2story project and advised by Professor Alípio Jorge and Professor Ricardo Campos.
+ 2017-2019 MS, Applied Mathematics; University of Porto Thesis title: ECG Compression and QRS Detection: an IoT Approach
+ 2014-2017 BSc, Physics; University of Porto In the bachelor&amp;rsquo;s I gained knowledge of Classical and Quantum Physics, learned experimental methods and built a solid background in numerical and computational techniques.</description>
+    </item>
+    
+    <item>
+      <title>Other</title>
+      <link>https://sousahugo.com/other/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://sousahugo.com/other/</guid>
+      <description>LxMLS 2021 Attended the Lisbon Summer School 2021.
+Eurekathon 2020 Member of the team - Feeding the Future - that took 2º place on Eurekathon 2020.</description>
+    </item>
+    
+    <item>
+      <title>Publications</title>
+      <link>https://sousahugo.com/publications/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://sousahugo.com/publications/</guid>
+      <description>Sousa, H. O. (2021). Temporal Relation Extraction: The Event Ordering Task.
+Sousa, H. O. (2019). ECG Compression and QRS Detection: an IoT Approach.</description>
+    </item>
+    
+    <item>
+      <title>Work</title>
+      <link>https://sousahugo.com/work/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://sousahugo.com/work/</guid>
+      <description> Research Assistant @ INESC TEC
+December 2020 to &amp;hellip; Data Scientist @ BNP Paribas
+December 2019 to December 2020 Data Scientist @ JTA: The Data Scientists
+July 2018 to April 2019  </description>
+    </item>
+    
+  </channel>
+</rss>
