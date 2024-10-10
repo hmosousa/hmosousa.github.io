@@ -1,547 +1,425 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-<title>resume.md</title>
-<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
-
-<style>
-/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
-/*---------------------------------------------------------------------------------------------
- *  Copyright (c) Microsoft Corporation. All rights reserved.
- *  Licensed under the MIT License. See License.txt in the project root for license information.
- *--------------------------------------------------------------------------------------------*/
-
-body {
-	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
-	font-size: var(--vscode-markdown-font-size, 14px);
-	padding: 0 26px;
-	line-height: var(--vscode-markdown-line-height, 22px);
-	word-wrap: break-word;
-}
-
-#code-csp-warning {
-	position: fixed;
-	top: 0;
-	right: 0;
-	color: white;
-	margin: 16px;
-	text-align: center;
-	font-size: 12px;
-	font-family: sans-serif;
-	background-color:#444444;
-	cursor: pointer;
-	padding: 6px;
-	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
-}
-
-#code-csp-warning:hover {
-	text-decoration: none;
-	background-color:#007acc;
-	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
-}
-
-body.scrollBeyondLastLine {
-	margin-bottom: calc(100vh - 22px);
-}
-
-body.showEditorSelection .code-line {
-	position: relative;
-}
-
-body.showEditorSelection .code-active-line:before,
-body.showEditorSelection .code-line:hover:before {
-	content: "";
-	display: block;
-	position: absolute;
-	top: 0;
-	left: -12px;
-	height: 100%;
-}
-
-body.showEditorSelection li.code-active-line:before,
-body.showEditorSelection li.code-line:hover:before {
-	left: -30px;
-}
-
-.vscode-light.showEditorSelection .code-active-line:before {
-	border-left: 3px solid rgba(0, 0, 0, 0.15);
-}
-
-.vscode-light.showEditorSelection .code-line:hover:before {
-	border-left: 3px solid rgba(0, 0, 0, 0.40);
-}
-
-.vscode-light.showEditorSelection .code-line .code-line:hover:before {
-	border-left: none;
-}
-
-.vscode-dark.showEditorSelection .code-active-line:before {
-	border-left: 3px solid rgba(255, 255, 255, 0.4);
-}
-
-.vscode-dark.showEditorSelection .code-line:hover:before {
-	border-left: 3px solid rgba(255, 255, 255, 0.60);
-}
-
-.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
-	border-left: none;
-}
-
-.vscode-high-contrast.showEditorSelection .code-active-line:before {
-	border-left: 3px solid rgba(255, 160, 0, 0.7);
-}
-
-.vscode-high-contrast.showEditorSelection .code-line:hover:before {
-	border-left: 3px solid rgba(255, 160, 0, 1);
-}
-
-.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
-	border-left: none;
-}
-
-img {
-	max-width: 100%;
-	max-height: 100%;
-}
-
-a {
-	text-decoration: none;
-}
-
-a:hover {
-	text-decoration: underline;
-}
-
-a:focus,
-input:focus,
-select:focus,
-textarea:focus {
-	outline: 1px solid -webkit-focus-ring-color;
-	outline-offset: -1px;
-}
-
-hr {
-	border: 0;
-	height: 2px;
-	border-bottom: 2px solid;
-}
-
-h1 {
-	padding-bottom: 0.3em;
-	line-height: 1.2;
-	border-bottom-width: 1px;
-	border-bottom-style: solid;
-}
-
-h1, h2, h3 {
-	font-weight: normal;
-}
-
-table {
-	border-collapse: collapse;
-}
-
-table > thead > tr > th {
-	text-align: left;
-	border-bottom: 1px solid;
-}
-
-table > thead > tr > th,
-table > thead > tr > td,
-table > tbody > tr > th,
-table > tbody > tr > td {
-	padding: 5px 10px;
-}
-
-table > tbody > tr + tr > td {
-	border-top: 1px solid;
-}
-
-blockquote {
-	margin: 0 7px 0 5px;
-	padding: 0 16px 0 10px;
-	border-left-width: 5px;
-	border-left-style: solid;
-}
-
-code {
-	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
-	font-size: 1em;
-	line-height: 1.357em;
-}
-
-body.wordWrap pre {
-	white-space: pre-wrap;
-}
-
-pre:not(.hljs),
-pre.hljs code > div {
-	padding: 16px;
-	border-radius: 3px;
-	overflow: auto;
-}
-
-pre code {
-	color: var(--vscode-editor-foreground);
-	tab-size: 4;
-}
-
-/** Theming */
-
-.vscode-light pre {
-	background-color: rgba(220, 220, 220, 0.4);
-}
-
-.vscode-dark pre {
-	background-color: rgba(10, 10, 10, 0.4);
-}
-
-.vscode-high-contrast pre {
-	background-color: rgb(0, 0, 0);
-}
-
-.vscode-high-contrast h1 {
-	border-color: rgb(0, 0, 0);
-}
-
-.vscode-light table > thead > tr > th {
-	border-color: rgba(0, 0, 0, 0.69);
-}
-
-.vscode-dark table > thead > tr > th {
-	border-color: rgba(255, 255, 255, 0.69);
-}
-
-.vscode-light h1,
-.vscode-light hr,
-.vscode-light table > tbody > tr + tr > td {
-	border-color: rgba(0, 0, 0, 0.18);
-}
-
-.vscode-dark h1,
-.vscode-dark hr,
-.vscode-dark table > tbody > tr + tr > td {
-	border-color: rgba(255, 255, 255, 0.18);
-}
-
-</style>
-
-<style>
-/* Tomorrow Theme */
-/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
-/* Original theme - https://github.com/chriskempson/tomorrow-theme */
-
-/* Tomorrow Comment */
-.hljs-comment,
-.hljs-quote {
-	color: #8e908c;
-}
-
-/* Tomorrow Red */
-.hljs-variable,
-.hljs-template-variable,
-.hljs-tag,
-.hljs-name,
-.hljs-selector-id,
-.hljs-selector-class,
-.hljs-regexp,
-.hljs-deletion {
-	color: #c82829;
-}
-
-/* Tomorrow Orange */
-.hljs-number,
-.hljs-built_in,
-.hljs-builtin-name,
-.hljs-literal,
-.hljs-type,
-.hljs-params,
-.hljs-meta,
-.hljs-link {
-	color: #f5871f;
-}
-
-/* Tomorrow Yellow */
-.hljs-attribute {
-	color: #eab700;
-}
-
-/* Tomorrow Green */
-.hljs-string,
-.hljs-symbol,
-.hljs-bullet,
-.hljs-addition {
-	color: #718c00;
-}
-
-/* Tomorrow Blue */
-.hljs-title,
-.hljs-section {
-	color: #4271ae;
-}
-
-/* Tomorrow Purple */
-.hljs-keyword,
-.hljs-selector-tag {
-	color: #8959a8;
-}
-
-.hljs {
-	display: block;
-	overflow-x: auto;
-	color: #4d4d4c;
-	padding: 0.5em;
-}
-
-.hljs-emphasis {
-	font-style: italic;
-}
-
-.hljs-strong {
-	font-weight: bold;
-}
-</style>
-
-<style>
-/*
- * Markdown PDF CSS
- */
-
- body {
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
-	padding: 0 12px;
-}
-
-pre {
-	background-color: #f8f8f8;
-	border: 1px solid #cccccc;
-	border-radius: 3px;
-	overflow-x: auto;
-	white-space: pre-wrap;
-	overflow-wrap: break-word;
-}
-
-pre:not(.hljs) {
-	padding: 23px;
-	line-height: 19px;
-}
-
-blockquote {
-	background: rgba(127, 127, 127, 0.1);
-	border-color: rgba(0, 122, 204, 0.5);
-}
-
-.emoji {
-	height: 1.4em;
-}
-
-code {
-	font-size: 14px;
-	line-height: 19px;
-}
-
-/* for inline code */
-:not(pre):not(.hljs) > code {
-	color: #C9AE75; /* Change the old color so it seems less like an error */
-	font-size: inherit;
-}
-
-/* Page Break : use <div class="page"/> to insert page break
--------------------------------------------------------- */
-.page {
-	page-break-after: always;
-}
-
-</style>
-
-<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hugo Sousa - Resume</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #f0f0f0;
+			font-size: 14px;
+        }
+
+        .container {
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            color: #2c3e50;
+            border-bottom: 2px solid #2c3e50;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #34495e;
+            margin-top: 20px;
+            border-bottom: 1px solid #34495e;
+            padding-bottom: 5px;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        a {
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .publication,
+        .project,
+        .job {
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+        }
+
+        .publication:last-child,
+        .project:last-child,
+        .job:last-child {
+            border-bottom: none;
+        }
+
+        .publication h3,
+        .project h3,
+        .job h3 {
+            margin: 0 0 0 0;
+            color: #2c3e50;
+            font-size: 1em;
+        }
+
+        .publication p,
+        .project p,
+        .job p {
+            margin: 0;
+            line-height: 1.4;
+			font-size: 0.9em;
+        }
+
+        .publication .authors,
+        .project .authors,
+        .job .company {
+            color: #555;
+            font-size: 0.9em;
+        }
+
+        .publication .date,
+        .project .date,
+        .job .date {
+            font-style: italic;
+            color: #7f8c8d;
+            font-size: 0.8em;
+        }
+
+		.p {
+			margin: 0px;
+			line-height: 1.4;
+			font-size: 0.9em;
+		}
+
+        .publication {
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+        }
+
+        .publication:last-child {
+            border-bottom: none;
+        }
+
+        .publication h3 {
+            margin: 0 0 0 0;
+            color: #2c3e50;
+            font-size: 1em;
+        }
+
+        .publication p {
+            margin: 0;
+            line-height: 1.4;
+			font-size: 0.9em;
+        }
+
+        .publication .authors {
+            color: #555;
+            font-size: 0.8em;
+        }
+
+        .publication .date {
+            font-style: italic;
+            color: #7f8c8d;
+            font-size: 0.8em;
+        }
+
+        .job {
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+        }
+
+        .job:last-child {
+            border-bottom: none;
+        }
+
+        .job h3 {
+            margin: 0 0 0 0;
+            color: #2c3e50;
+            font-size: 1em;
+        }
+
+        .job p {
+            margin: 0;
+            line-height: 1.4;
+			font-size: 0.9em;
+        }
+
+        .job .company {
+            color: #555;
+            font-size: 0.9em;
+        }
+
+        .job .date {
+            font-style: italic;
+            color: #7f8c8d;
+            font-size: 0.8em;
+        }
+
+		.details p {
+            line-height: 1.4;
+			font-size: 0.9em;
+        }
+
+        .award {
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+        }
+
+        .award:last-child {
+            border-bottom: none;
+        }
+
+        .award h3 {
+            margin: 0 0 0 0;
+            color: #2c3e50;
+            font-size: 1em;
+        }
+
+        .award p {
+            margin: 0;
+            line-height: 1.4;
+			font-size: 0.9em;
+        }
+
+    </style>
 </head>
-<body>
-  <script>
-    mermaid.initialize({
-      startOnLoad: true,
-      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
-          ? 'dark'
-          : 'default'
-    });
-  </script>
-<h1 id="hugo-sousa">Hugo Sousa</h1>
-<h2 id="details">Details</h2>
-<p><strong>Email:</strong> hmosousa@gmail.com</p>
-<h2 id="links">Links</h2>
-<ul>
-<li><a href="https://hugosousa.net">hugosousa.net</a></li>
-<li><a href="https://github.com/hmosousa">GitHub</a></li>
-<li><a href="https://huggingface.co/hugosousa">HuggingFace</a></li>
-<li><a href="https://scholar.google.com/citations?user=d-14Qx4AAAAJ&amp;hl=en">Google Scholar</a></li>
-<li><a href="https://www.linkedin.com/in/hmosousa/">LinkedIn</a></li>
-</ul>
-<h2 id="research-interest">Research Interest</h2>
-<ul>
-<li>Natural Language Processing</li>
-<li>Large Language Models</li>
-<li>Machine Learning</li>
-<li>Deep Learning</li>
-<li>Reinforcement Learning</li>
-<li>Information Retrieval</li>
-</ul>
-<h2 id="publications">Publications</h2>
-<ul>
-<li>
-<p><strong>Physio: An LLM-Powered Physiotherapy Advisor</strong><br>
-Hugo Sousa, Rúben Almeida, Luís F. Cunha, Nuno Guimarães, Ricardo Campos and Alipio Jorge<br>
-ECIR, 24-28 March, 2024, Glasgow, Scotland</p>
-</li>
-<li>
-<p><strong>GPT Struct Me: Probing GPT Models on Narrative Entity Extraction</strong><br>
-Hugo Sousa, Nuno Guimarães, Alípio Jorge, and Ricardo Campos<br>
-WI-IAT, 26-29 October 2023, Venice, Italy</p>
-</li>
-<li>
-<p><strong>TEI2GO: A Multilingual Approach for Fast Temporal Expression Identification</strong><br>
-Hugo Sousa, Ricardo Campos, and Alípio Jorge<br>
-CIKM, 21-25 October 2023, Birmingham, United Kingdom</p>
-</li>
-<li>
-<p><strong>tieval: An Evaluation Framework for Temporal Information Extraction Systems</strong><br>
-Hugo Sousa, Alípio Jorge and Ricardo Campos<br>
-SIGIR, 23-27 July 2023, Taipei, Taiwan</p>
-</li>
-<li>
-<p><strong>A Biomedical Entity Extraction Pipeline for Oncology Electronic Health Records in Portuguese</strong><br>
-Hugo Sousa, Arian Pasquali, Alípio Jorge, Catarina Sousa, and Mário Lopes<br>
-ACM SAC, 27-31 March 2023, Tallinn, Estonia</p>
-</li>
-<li>
-<p><strong>Temporal Relation Extraction: The Event Ordering Task</strong><br>
-Hugo Sousa<br>
-DESIRES, 15-18 September 2021, Padua, Italy</p>
-</li>
-<li>
-<p><strong>ECG Compression and QRS Detection: an IoT Approach</strong><br>
-Hugo Sousa, Jonathan Tooley, Ana Paula Rocha<br>
-Master Thesis, 2019, Porto, Portugal</p>
-</li>
-</ul>
-<h2 id="internships">Internships</h2>
-<ul>
-<li>
-<p><strong>Applied Scientist, Amazon</strong><br>
-Jun 2024 — Sep 2024, Palo Alto</p>
-</li>
-<li>
-<p><strong>Visiting Student, Carnegie Mellon University</strong><br>
-Oct 2023 — Dec 2024, Pittsburgh</p>
-</li>
-<li>
-<p><strong>Data Scientist, Microsoft</strong><br>
-Feb 2019 — Apr 2019, Seattle</p>
-</li>
-</ul>
-<h2 id="education">Education</h2>
-<ul>
-<li>
-<p><strong>Ph.D. Computer Science, University of Porto</strong><br>
-Jan 2021 — Present<br>
-Expected Graduation Date: 2nd Quarter 2025, Porto</p>
-</li>
-<li>
-<p><strong>MSc. Applied Mathematics, University of Porto</strong><br>
-Sep 2017 — Oct 2019, Porto</p>
-</li>
-<li>
-<p><strong>BSc. Physics, University of Porto</strong><br>
-Sep 2014 — Jul 2017, Porto</p>
-</li>
-</ul>
-<h2 id="research-projects">Research Projects</h2>
-<ul>
-<li>
-<p><strong>CHPVVC</strong><br>
-Sep 2023 — Present<br>
-The goal of this project is to produce a dashboard that compiles all the information regarding a patient to be used by the medical staff of the Hospital of Póvoa de Varzim and Vila do Conde (CHPVVC) that do Domiciliary visits. My role is to develop the natural language processing pipeline that will extract biomedical entities and relations between them from the multiple clinical documents.</p>
-</li>
-<li>
-<p><strong>StorySense</strong><br>
-Jul 2023 — Present<br>
-The StorySense project is the sequel of Text2Story. While in the first project, we were concerned with extracting the information in a structured manner, in the StorySense project we are more focused on the meaning (sense) of each component of the narrative. My role in this project is as an assistant researcher, looking for a deeper encoding of temporal information.</p>
-</li>
-<li>
-<p><strong>MINE4HEALTH</strong><br>
-Jan 2020 — Nov 2021<br>
-As a member of the NLP team, I contributed to the MINE4HEALTH project developed by INESC TEC in collaboration with the Portuguese Institute of Oncology of Porto - Francisco Gentil (IPO Porto). The project focused on using text-mining and natural language processing techniques to extract structured information from clinical documents. This effort aimed to enhance decision-making within oncological contexts by providing healthcare professionals with easily accessible panels containing crucial patient data, including health status, pathological history, biometric information, exams, and diagnoses. By streamlining the consultation process and enabling data-driven insights, the project not only reduces redundancy and treatment time but also supports the comparison of treatment effectiveness and adherence to international protocols.</p>
-</li>
-<li>
-<p><strong>Text2Story</strong><br>
-Dec 2020 — Jun 2023<br>
-Member of the project Text2Story: Extracting journalistic narratives from text and representing them in a narrative modeling language. As a Ph.D. student, my contributions to this project were mainly concerned the extraction of temporal information from text. This includes the temporal entities - such as events, temporal expressions, or participants - and temporal relations that hold between them - such as before, after, or simultaneous.</p>
-</li>
-</ul>
-<h2 id="awards">Awards</h2>
-<ul>
-<li>
-<p><strong>3rd Sword AI Challenge</strong><br>
-Member of the team - Team Physio - that took 3rd place on Sword AI Challenge 2023.</p>
-</li>
-<li>
-<p><strong>1st Portugal Digital Awards</strong><br>
-Part of the team that developed the natural language processing pipeline for the MINE4HEALTH project. This project was recognized as the &quot;Best Future of Work Project&quot; at Portugal Digital Awards 2021.</p>
-</li>
-<li>
-<p><strong>2nd Eurekathon</strong><br>
-Member of the team - Feeding the Future - that took 2nd place on Eurekathon 2020.</p>
-</li>
-</ul>
-<h2 id="employment-history">Employment History</h2>
-<ul>
-<li>
-<p><strong>Teaching Assistant, University of Porto</strong><br>
-Feb 2023 — Present, Porto</p>
-</li>
-<li>
-<p><strong>Research Assistant, INESC TEC</strong><br>
-Dec 2020 — Present, Porto</p>
-</li>
-<li>
-<p><strong>Data Scientist, BNP Paribas</strong><br>
-Dec 2019 — Dec 2020, Porto</p>
-</li>
-<li>
-<p><strong>Data Scientist, JTA: The Data Scientist</strong><br>
-Jul 2018 — Apr 2019, Porto</p>
-</li>
-</ul>
-<h2 id="other">Other</h2>
-<h3 id="reviewer">Reviewer</h3>
-<ul>
-<li>2 papers of the 27th International Conference on Theory and Practice of Digital Libraries (TPDL'23)</li>
-<li>1 paper of the 46th International ACM SIGIR Conference on Research and Development in Information Retrieval (SIGIR'23)</li>
-<li>2 papers at the resource track of the 32nd ACM International Conference on Information and Knowledge Management (CIKM'23)</li>
-<li>2 papers of the Sixth International Workshop on Narrative Extraction from Texts held in conjunction with the 45th European Conference on Information Retrieval (Text2Story'23 Workshop @ECIR)</li>
-<li>1 paper of the 45th European Conference on Information Retrieval. ECIR'23</li>
-<li>1 paper of the Web Conference (WWW'23)</li>
-<li>1 paper of the IEEE Transactions on Knowledge and Data Engineering Journal in 2022</li>
-<li>1 paper of the 2022 IEEE/ACM International Conference on Advances in Social Networks Analysis and Mining. (ASONAM'22)</li>
-<li>1 paper of the 12th Temporal Web Analytics Workshop in conjunction with The Web Conference 2022 (TempWeb'22 Workshop @WWW)</li>
-<li>1 paper of the Fifth International Workshop on Narrative Extraction from Texts held in conjunction with the 44th European Conference on Information Retrieval (Text2Story'22 Workshop @ECIR)</li>
-<li>1 paper of the ACM Transactions on Information Systems Journal in 2021</li>
-<li>1 paper of the 44th International ACM SIGIR Conference on Research and Development in Information Retrieval (SIGIR'21)</li>
-<li>2 papers of the 43rd edition of the annual BCS-IRSG European Conference on Information Retrieval (ECIR'21)</li>
-</ul>
-<h3 id="chair">Chair</h3>
-<ul>
-<li>Session and Web and Dissemination chair of the 1st International Workshop on Implicit Author Characterization from Texts for Search and Retrieval held in conjunction with the 46th International ACM SIGIR Conference on Research and Development in Information Retrieval (IACT'23)</li>
-<li>Session and Web Dissemination chair of the Sixth International Workshop on Narrative Extraction from Texts held in conjunction with the 45th European Conference on Information Retrieval (Text2Story'23 @ECIR)</li>
-<li>Web Dissemination chair of the Fifth International Workshop on Narrative Extraction from Texts held in conjunction with the 44th European Conference on Information Retrieval (Text2Story'22 @ECIR)</li>
-<li>Session chair of the 8th IEEE International Conference on Data Science and Advanced Analytics (DSAA'21)</li>
-</ul>
-<h3 id="courses">Courses</h3>
-<ul>
-<li>The 13th European Summer School in Information Retrieval, 18-22 July 2022, Lisbon (ESSIR'22)</li>
-<li>11th Lisbon Machine Learning Summer School, 7-15 July 2021, Lisbon (LxMLS'21)</li>
-<li>Sequence Models with Attention Mechanism, July 2020, Online at Coursera</li>
-<li>Neural Networks and Deep Learning, May 2020, Online at Coursera</li>
-</ul>
 
+<body>
+    <div class="container">
+        <h1>Hugo Sousa</h1>
+
+		<h2>Details</h2>
+        <div class="details">
+            <p><strong>Email:</strong> <a href="mailto:hmosousa@gmail.com">hmosousa@gmail.com</a></p>
+            <p><strong>Current Position:</strong> Ph.D. Candidate in Computer Science, University of Porto</p>
+        </div>
+
+        <h2>Links</h2>
+        <ul>
+            <li><a href="https://hugosousa.net">hugosousa.net</a></li>
+            <li><a href="https://github.com/hmosousa">GitHub</a></li>
+            <li><a href="https://huggingface.co/hugosousa">HuggingFace</a></li>
+            <li><a href="https://scholar.google.com/citations?user=d-14Qx4AAAAJ&hl=en">Google Scholar</a></li>
+            <li><a href="https://www.linkedin.com/in/hmosousa/">LinkedIn</a></li>
+        </ul>
+
+        <h2>Research Interest</h2>
+        <ul>
+            <li>Natural Language Processing</li>
+            <li>Large Language Models</li>
+            <li>Machine Learning</li>
+            <li>Deep Learning</li>
+            <li>Reinforcement Learning</li>
+            <li>Information Retrieval</li>
+        </ul>
+
+        <h2>Publications</h2>
+        <div class="publication">
+            <h3>Text2Story Lusa: A Dataset for Narrative Analysis in European Portuguese News Articles</h3>
+            <p class="authors">Sergio Nunes, Alípio Jorge, Evelin Amorim, Hugo Sousa, António Leal, Purificação Silvano, Inês Cantante, and Ricardo Campos</p>
+            <p class="date">LREC-COLING, 20-25 May 2024, Torino, Italy</p>
+        </div>
+
+        <div class="publication">
+            <h3>Physio: An LLM-Powered Physiotherapy Advisor</h3>
+            <p class="authors">Hugo Sousa, Rúben Almeida, Luís F. Cunha, Nuno Guimarães, Ricardo Campos and Alipio Jorge</p>
+            <p class="date">ECIR, 24-28 March, 2024, Glasgow, Scotland</p>
+        </div>
+
+        <div class="publication">
+            <h3>GPT Struct Me: Probing GPT Models on Narrative Entity Extraction</h3>
+            <p class="authors">Hugo Sousa, Nuno Guimarães, Alípio Jorge, and Ricardo Campos</p>
+            <p class="date">WI-IAT, 26-29 October 2023, Venice, Italy</p>
+        </div>
+
+        <div class="publication">
+            <h3>TEI2GO: A Multilingual Approach for Fast Temporal Expression Identification</h3>
+            <p class="authors">Hugo Sousa, Ricardo Campos, and Alípio Jorge</p>
+            <p class="date">CIKM, 21-25 October 2023, Birmingham, United Kingdom</p>
+        </div>
+
+        <div class="publication">
+            <h3>tieval: An Evaluation Framework for Temporal Information Extraction Systems</h3>
+            <p class="authors">Hugo Sousa, Alípio Jorge and Ricardo Campos</p>
+            <p class="date">SIGIR, 23-27 July 2023, Taipei, Taiwan</p>
+        </div>
+        
+        <div class="publication">
+            <h3>A Biomedical Entity Extraction Pipeline for Oncology Electronic Health Records in
+                Portuguese</h3>
+            <p class="authors">Hugo Sousa, Arian Pasquali, Alípio Jorge, Catarina Sousa, and Mário Lopes</p>
+            <p class="date">ACM SAC, 27-31 March 2023, Tallinn, Estonia</p>
+        </div>
+        
+        <div class="publication">
+            <h3>Temporal Relation Extraction: The Event Ordering Task</h3>
+            <p class="authors">Hugo Sousa</p>
+            <p class="date">DESIRES, 15-18 September 2021, Padua, Italy</p>
+        </div>
+
+        <div class="publication">
+            <h3>ECG Compression and QRS Detection: an IoT Approach</h3>
+            <p class="authors">Hugo Sousa, Jonathan Tooley, Ana Paula Rocha</p>
+            <p class="date">Master Thesis, 2019, Porto, Portugal</p>
+        </div>
+
+        <h2>Internships</h2>
+        <div class="job">
+            <h3>Applied Scientist</h3>
+            <p class="company">Amazon</p>
+            <p class="date">Jun 2024 — Sep 2024, Palo Alto</p>
+        </div>
+        <div class="job">
+            <h3>Visiting Student</h3>
+            <p class="company">Carnegie Mellon University</p>
+            <p class="date">Oct 2023 — Dec 2024, Pittsburgh</p>
+        </div>
+        <div class="job">
+            <h3>Data Scientist</h3>
+            <p class="company">Microsoft</p>
+            <p class="date">Feb 2019 — Apr 2019, Seattle</p>
+        </div>
+
+        <h2>Education</h2>
+        <div class="job">
+            <h3>Ph.D. Computer Science</h3>
+            <p class="company">University of Porto</p>
+            <p class="date">Jan 2021 — Present</p>
+            <p>Expected Graduation Date: 2nd Quarter 2025, Porto</p>
+        </div>
+        <div class="job">
+            <h3>MSc. Applied Mathematics</h3>
+            <p class="company">University of Porto</p>
+            <p class="date">Sep 2017 — Oct 2019, Porto</p>
+        </div>
+        <div class="job">
+            <h3>BSc. Physics</h3>
+            <p class="company">University of Porto</p>
+            <p class="date">Sep 2014 — Jul 2017, Porto</p>
+        </div>
+
+        <h2>Research Projects</h2>
+        <div class="project">
+            <h3>CHPVVC</h3>
+            <p class="date">Sep 2023 — Present</p>
+            <p>The goal of this project is to produce a dashboard that compiles all the information regarding a patient
+                to be used by the medical staff of the Hospital of Póvoa de Varzim and Vila do Conde (CHPVVC) that do
+                Domiciliary visits. My role is to develop the natural language processing pipeline that will extract
+                biomedical entities and relations between them from the multiple clinical documents.</p>
+        </div>
+        
+        <div class="project">
+            <h3>StorySense</h3>
+            <p class="date">Jul 2023 — Present</p>
+            <p>The StorySense project is the sequel of Text2Story. While in the first project, we were concerned with
+                extracting the information in a structured manner, in the StorySense project we are more focused on the
+                meaning (sense) of each component of the narrative. My role in this project is as an assistant
+                researcher, looking for a deeper encoding of temporal information.</p>
+        </div>
+
+        <div class="project">
+            <h3>MINE4HEALTH</h3>
+            <p class="date">Jan 2020 — Nov 2021</p>
+            <p>As a member of the NLP team, I contributed to the MINE4HEALTH project developed by INESC TEC in
+                collaboration with the Portuguese Institute of Oncology of Porto - Francisco Gentil (IPO Porto). The
+                project focused on using text-mining and natural language processing techniques to extract structured
+                information from clinical documents. This effort aimed to enhance decision-making within oncological
+                contexts by providing healthcare professionals with easily accessible panels containing crucial patient
+                data, including health status, pathological history, biometric information, exams, and diagnoses. By
+                streamlining the consultation process and enabling data-driven insights, the project not only reduces
+                redundancy and treatment time but also supports the comparison of treatment effectiveness and adherence
+                to international protocols.</p>
+        </div>
+        <div class="project">
+            <h3>Text2Story</h3>
+            <p class="date">Dec 2020 — Jun 2023</p>
+            <p>Member of the project Text2Story: Extracting journalistic narratives from text and representing them in
+                a narrative modeling language. As a Ph.D. student, my contributions to this project were mainly
+                concerned the extraction of temporal information from text. This includes the temporal entities - such
+                as events, temporal expressions, or participants - and temporal relations that hold between them - such
+                as before, after, or simultaneous.</p>
+        </div>
+
+        <h2>Awards</h2>
+        <div class="award">
+            <h3>3rd Sword AI Challenge</h3>
+            <p>Member of the team - Team Physio - that took 3rd place on Sword AI Challenge 2023.</p>
+        </div>
+        <div class="award">
+            <h3>1st Portugal Digital Awards</h3>
+            <p>Part of the team that developed the natural language processing pipeline for the MINE4HEALTH project.
+                This project was recognized as the "Best Future of Work Project" at Portugal Digital Awards 2021.</p>
+        </div>
+        <div class="award">
+            <h3>2nd Eurekathon</h3>
+            <p>Member of the team - Feeding the Future - that took 2nd place on Eurekathon 2020.</p>
+        </div>
+
+        <h2>Employment History</h2>
+        <div class="job">
+            <h3>Teaching Assistant</h3>
+            <p class="company">University of Porto</p>
+            <p class="date">Feb 2023 — Present, Porto</p>
+        </div>
+        <div class="job">
+            <h3>Research Assistant</h3>
+            <p class="company">INESC TEC</p>
+            <p class="date">Dec 2020 — Present, Porto</p>
+        </div>
+        <div class="job">
+            <h3>Data Scientist</h3>
+            <p class="company">BNP Paribas</p>
+            <p class="date">Dec 2019 — Dec 2020, Porto</p>
+        </div>
+        <div class="job">
+            <h3>Data Scientist</h3>
+            <p class="company">JTA: The Data Scientist</p>
+            <p class="date">Jul 2018 — Apr 2019, Porto</p>
+        </div>
+
+        <h2>Other</h2>
+        <h3>Reviewer</h3>
+        <ul>
+            <li>2 papers of the 27th International Conference on Theory and Practice of Digital Libraries (TPDL'23)</li>
+            <li>1 paper of the 46th International ACM SIGIR Conference on Research and Development in Information Retrieval (SIGIR'23)</li>
+            <li>2 papers at the resource track of the 32nd ACM International Conference on Information and Knowledge Management (CIKM'23)</li>
+            <li>2 papers of the Sixth International Workshop on Narrative Extraction from Texts held in conjunction with the 45th European Conference on Information Retrieval (Text2Story'23 Workshop @ECIR)</li>
+            <li>1 paper of the 45th European Conference on Information Retrieval. ECIR'23</li>
+            <li>1 paper of the Web Conference (WWW'23)</li>
+            <li>1 paper of the IEEE Transactions on Knowledge and Data Engineering Journal in 2022</li>
+            <li>1 paper of the 2022 IEEE/ACM International Conference on Advances in Social Networks Analysis and Mining. (ASONAM'22)</li>
+            <li>1 paper of the 12th Temporal Web Analytics Workshop in conjunction with The Web Conference 2022 (TempWeb'22 Workshop @WWW)</li>
+            <li>1 paper of the Fifth International Workshop on Narrative Extraction from Texts held in conjunction with the 44th European Conference on Information Retrieval (Text2Story'22 Workshop @ECIR)</li>
+            <li>1 paper of the ACM Transactions on Information Systems Journal in 2021</li>
+            <li>1 paper of the 44th International ACM SIGIR Conference on Research and Development in Information Retrieval (SIGIR'21)</li>
+            <li>2 papers of the 43rd edition of the annual BCS-IRSG European Conference on Information Retrieval (ECIR'21)</li>
+        </ul>
+
+        <h3>Chair</h3>
+        <ul>
+            <li>Session and Web and Dissemination chair of the 1st International Workshop on Implicit Author Characterization from Texts for Search and Retrieval held in conjunction with the 46th International ACM SIGIR Conference on Research and Development in Information Retrieval (IACT'23)</li>
+            <li>Session and Web Dissemination chair of the Sixth International Workshop on Narrative Extraction from Texts held in conjunction with the 45th European Conference on Information Retrieval (Text2Story'23 @ECIR)</li>
+            <li>Web Dissemination chair of the Fifth International Workshop on Narrative Extraction from Texts held in conjunction with the 44th European Conference on Information Retrieval (Text2Story'22 @ECIR)</li>
+            <li>Session chair of the 8th IEEE International Conference on Data Science and Advanced Analytics (DSAA'21)</li>
+        </ul>
+
+        <h3>Courses</h3>
+        <ul>
+            <li>The 13th European Summer School in Information Retrieval, 18-22 July 2022, Lisbon (ESSIR'22)</li>
+            <li>11th Lisbon Machine Learning Summer School, 7-15 July 2021, Lisbon (LxMLS'21)</li>
+            <li>Sequence Models with Attention Mechanism, July 2020, Online at Coursera</li>
+            <li>Neural Networks and Deep Learning, May 2020, Online at Coursera</li>
+        </ul>
+
+    </div>
 </body>
+
 </html>
