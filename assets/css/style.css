@@ -930,7 +930,8 @@ h1:hover .anchor, h2:hover .anchor, h3:hover .anchor, h4:hover .anchor, h5:hover
 
 .profile img {
     display: inline-table;
-    pointer-events: none
+    pointer-events: none;
+    padding-bottom: 20px;
 }
 
 .buttons {
@@ -1111,22 +1112,78 @@ h1:hover .anchor, h2:hover .anchor, h3:hover .anchor, h4:hover .anchor, h5:hover
 
 .profile_inner {
     display: flex;
-    flex-direction: row;
-    gap: 20px; /* Adjust the gap between columns as needed */
+    flex-direction: column;
+    gap: 20px;
+}
+
+.profile_inner h1, .profile_inner dt {
+    width: 100%;
+    text-align: center;
 }
 
 .profile-left, .profile-right {
-    flex: 1; /* Each column takes up equal space */
+    display: flex;
+    flex: 1;
+    flex-direction: column;
 }
 
 .profile-left {
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Center align items in the left column */
+    align-items: center;
 }
 
 .profile-right {
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* Center the text vertically */
+    justify-content: left;
+    text-align: left;
+}
+
+.profile-right p {
+    text-align: left;
+    text-justify: inter-word;
+    font-size: 14px;
+    padding-bottom: 10px;
+}
+
+.profile-right dt {
+    font-size: 16px;
+    margin-bottom: 10px;
+    font-style: italic ;
+}
+
+.profile-image {
+    width: 150px;
+    height: auto;
+}
+
+
+.highlights h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.highlights ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    text-align: left;
+}
+
+.highlights li {
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.profile-header {
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+.profile-header h1 {
+    margin-bottom: 0px;
+    font-size: 42px;
+    
+}
+
+.profile-header dt {
+    font-size: 16px;
+    color: var(--secondary);
+    font-style: italic;
 }
