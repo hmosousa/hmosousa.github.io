@@ -1113,77 +1113,113 @@ h1:hover .anchor, h2:hover .anchor, h3:hover .anchor, h4:hover .anchor, h5:hover
 .profile_inner {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
-.profile_inner h1, .profile_inner dt {
-    width: 100%;
-    text-align: center;
-}
-
-.profile-left, .profile-right {
+.profile-top {
     display: flex;
-    flex: 1;
-    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
 }
 
-.profile-left {
+.profile-info {
+    flex: 2;
+}
+
+.profile-info h1 {
+    margin-bottom: 10px;
+    font-size: 42px;
+    text-align: left;
+}
+
+.profile-info dt {
+    font-size: 16px;
+    color: var(--secondary);
+    font-style: italic;
+    text-align: left;
+}
+
+.profile-image-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
     align-items: center;
 }
 
-.profile-right {
-    justify-content: left;
-    text-align: left;
-}
-
-.profile-right p {
-    text-align: left;
-    text-justify: inter-word;
-    font-size: 14px;
-    padding-bottom: 10px;
-}
-
-.profile-right dt {
-    font-size: 16px;
-    margin-bottom: 10px;
-    font-style: italic ;
-}
-
 .profile-image {
-    width: 150px;
-    height: auto;
+    width: auto;
+    height: 200px;
+    border-radius: 10px;
 }
 
+.highlights {
+    background: var(--entry);
+    padding: 20px;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    text-align: left;
+}
 
 .highlights h2 {
-    font-size: 18px;
-    margin-bottom: 10px;
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: var(--primary);
 }
 
 .highlights ul {
     list-style-type: disc;
     padding-left: 20px;
-    text-align: left;
 }
 
 .highlights li {
-    font-size: 14px;
+    font-size: 15px;
     margin-bottom: 5px;
+    color: var(--content);
 }
 
+.intro {
+    color: var(--content);
+}
+
+.intro p {
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+.social-icons {
+    padding: 12px 0;
+    text-align: left;
+}
+
+/* Remove any conflicting styles */
 .profile-header {
-    margin-bottom: 5px;
-    text-align: center;
+    display: none;
 }
 
-.profile-header h1 {
-    margin-bottom: 0px;
-    font-size: 42px;
-    
+.profile-left, .profile-right {
+    display: none;
 }
 
-.profile-header dt {
-    font-size: 16px;
-    color: var(--secondary);
-    font-style: italic;
+@media screen and (max-width: 768px) {
+    .profile-top {
+        flex-direction: column-reverse;
+        gap: 20px;
+    }
+
+    .profile-info h1, .profile-info dt {
+        text-align: center;
+    }
+
+    .social-icons {
+        text-align: center;
+    }
+
+    .profile-image {
+        width: 150px;
+    }
 }
