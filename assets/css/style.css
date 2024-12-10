@@ -1223,3 +1223,36 @@ h1:hover .anchor, h2:hover .anchor, h3:hover .anchor, h4:hover .anchor, h5:hover
         width: 150px;
     }
 }
+
+/* Add these new styles for publications */
+.publication {
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+}
+
+.publication:last-child {
+    border-bottom: none;
+}
+
+.publication h3 {
+    margin: 0 0 0 0;
+    color: var(--primary);
+    font-size: 1em;
+}
+
+.publication p {
+    margin: 0;
+    line-height: 1.4;
+    font-size: 0.9em;
+}
+
+.publication .authors {
+    color: var(--secondary);
+    font-size: 0.9em;
+}
+
+.publication .date {
+    font-style: italic;
+    color: var(--secondary);
+    font-size: 0.8em;
+}
